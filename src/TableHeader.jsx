@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const TableHeader = () => {
   return (
@@ -13,7 +13,7 @@ const TableHeader = () => {
         <th>Action</th>
       </tr>
     </thead>
-  );
-};
+  )
+}
 
-export default TableHeader;
+export default TableHeader

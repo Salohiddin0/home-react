@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 
-const TableRow = ({ row, onIncrement, onDecrement, onToggleActive }) => {
+const TableRow = ({ row, toggleActive, handleIncrement, handleDecrement, handleDeleteRow }) => {
   return (
     <tr>
       <td>{row.id}</td>
@@ -9,21 +9,21 @@ const TableRow = ({ row, onIncrement, onDecrement, onToggleActive }) => {
       <td>{row.phone}</td>
       <td>
         <input
-          type='checkbox'
+          type="checkbox"
           checked={row.active}
-          onChange={() => onToggleActive(row.id)}
+          onChange={() => toggleActive(row.id)}
         />
       </td>
       <td>
-        <button onClick={() => onDecrement(row.id)}>-</button>
-        {` ${row.count} `}
-        <button onClick={() => onIncrement(row.id)}>+</button>
+        <button className="count-btn" onClick={() => handleDecrement(row.id)}>-</button>
+        {row.count}
+        <button className="count-btn" onClick={() => handleIncrement(row.id)}>+</button>
       </td>
       <td>
-        <button>👤</button>
+        <button className="delete-btn" onClick={() => handleDeleteRow(row.id)}>Delete</button>
       </td>
     </tr>
-  )
-}
+  );
+};
 
-export default TableRow
+export default TableRow;
